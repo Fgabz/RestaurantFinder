@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/spacing_small">
+
+    <TextView
+        android:id="@+id/place_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/distance"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textStyle="bold"
+        tools:text="Cafe Maman"
+        />
+
+    <LinearLayout
+        android:id="@+id/star_layout"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/spacing_medium_large"
+        android:layout_below="@+id/place_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        tools:text="3 mile"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'me.tatarka:gradle-retrolambda:3.1.0'
+  }
+}
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.1"
+
+  defaultConfig {
+    applicationId "com.example.fanilo.cityguide"
+    minSdkVersion 11
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+    // Google Support Libraries
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    //--RX Java & Android
+    compile 'io.reactivex:rxjava:1.0.13'
+    compile 'io.reactivex:rxandroid:0.25.0'
+    //ButterKnife View infection
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //Dagger2 Dependency Injection
+    compile 'com.google.dagger:dagger:2.0.1'
+    //Timber logs
+    compile 'com.jakewharton.timber:timber:2.7.1'
+    //Dagger Compiler
+    apt "com.google.dagger:dagger-compiler:2.0.1"
+    provided 'javax.annotation:jsr250-api:1.0'
+    //NetWorking
+    compile 'com.squareup.okhttp:okhttp:2.3.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.3.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+  //Event Otto Bus
+  compile 'com.squareup:otto:1.3.8'
+}
